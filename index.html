@@ -1,104 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Sharma Portfolio</title>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', sans-serif;
-    }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-    body {
-        height: 100vh;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        padding: 30px;
-        border-radius: 20px;
-        text-align: center;
-        color: white;
-        width: 320px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        transition: 0.4s;
-    }
-
-    .card:hover {
-        transform: translateY(-10px) scale(1.02);
-    }
-
-    .profile-img {
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        border: 4px solid white;
-        margin-bottom: 15px;
-    }
-
-    h1 {
-        font-size: 24px;
-        margin-bottom: 5px;
-    }
-
-    .tag {
-        font-size: 14px;
-        color: #ddd;
-        margin-bottom: 15px;
-    }
-
-    .info {
-        margin: 10px 0;
-        font-size: 14px;
-    }
-
-    .btn {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        border-radius: 25px;
-        background: white;
-        color: #764ba2;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .btn:hover {
-        background: #ffd369;
-        color: black;
-    }
-</style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="card">
+<header>
+  <h1>Krishan</h1>
+  <p>Software Developer</p>
+</header>
 
-    <!-- PHOTO (already added) -->
-    <img src="krishna.jpg" class="profile-img">
+<section class="profile">
+  <img src="krishan.jpg" alt="krishan">
+  <p>📍 Gurgaon, Haryana</p>
+  <p>📧 rohit254253@gmail.com</p>
+  <p>📞 7972966505</p>
+  <a href="https://www.linkedin.com/in/rohit-sharma-189519383" target="_blank">LinkedIn</a>
+</section>
 
-    <!-- NAME -->
-    <h1>Krishna Kumar</h1>
-    <div class="tag">12th Pass</div>
+<section class="card">
+  <h2>Professional Summary</h2>
+  <p>ATS-optimized and detail-oriented Software Developer skilled in building scalable web and mobile applications...</p>
+</section>
 
-    <!-- DETAILS -->
-    <div class="info">📞 +91 99908 24883</div>
-    <div class="info">📧 krishansain719@gmail.com</div>
+<section class="card">
+  <h2>Technical Skills</h2>
+  <ul>
+    <li>JavaScript, Dart, HTML, CSS, SQL</li>
+    <li>React, Flutter, Node.js, Express</li>
+    <li>Git, GitHub, VS Code, Postman</li>
+    <li>OOP, REST APIs, DBMS, DSA</li>
+  </ul>
+</section>
 
-    <!-- BUTTON -->
-    <a href="mailto:krishansain719@gmail.com" class="btn">Contact Me</a>
-<a href=" https://www.instagram.com/itz_kissu_king_004?igsh=NWs4M2c0bzluZmp3"class="btn">Insta</a>
-</div>
+<section class="card">
+  <h2>Projects</h2>
+  <p><b>Suphub</b> – Supply Chain Platform</p>
+  <p><b>iComplinder</b> – Complaint Management System</p>
+  <p><b>Maxbuddy</b> – Food Ordering App</p>
+</section>
+
+<section class="card">
+  <h2>Education</h2>
+  <p>Bachelor's of Engineering (Computer) – 2021 (64%)</p>
+  <img src="r1.jpeg" alt="Degree">
+</section>
+
+<section class="card">
+  <h2>Additional Highlights</h2>
+  <ul>
+    <li>API testing with Postman</li>
+    <li>Strong debugging mindset</li>
+    <li>Agile & CI/CD basics</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 Rohit Sharma</p>
+</footer>
 
 </body>
 </html>
