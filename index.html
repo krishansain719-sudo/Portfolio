@@ -1,82 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-
-body{
-background:lightblue;
-text-align:center;
-border:solid gray;
-
-}
-<\style>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krishan portfolio</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <title>Krishan Portfolio</title>
 </head>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
 
+body{
+  background: #0f172a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+header{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+  font-size: 28px;
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+}
+
+nav ul li{
+  margin: 0 15px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover{
+  color: #38bdf8;
+}
+
+.btn{
+  display: inline-block;
+  background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.45);
+}
+
+.btn2{
+  background: transparent;
+  border: 2px solid #38bdf8;
+  margin-left: 10px;
+}
+
+.btn2:hover{
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* ===== Hero ===== */
+.hero{
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 8%;
+  gap: 40px;
+}
+
+.hero-text{
+  width: 55%;
+}
+
+.hero-text h3{
+  color: #38bdf8;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero-text h1{
+  font-size: 70px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.hero-text h2{
+  font-size: 32px;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.hero-text p{
+  max-width: 600px;
+  color: #cbd5e1;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.hero-image{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img{
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #38bdf8;
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.35);
+  background: #1e293b;
+}
+
+/* ===== Common section title ===== */
+.section-title{
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #38bdf8;
+}
+
+/* ===== About ===== */
+.about{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 8%;
+  gap: 40px;
+  background: #111827;
+}
+
+.about-image{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img{
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.25);
+  background: #1e293b;
+}
+
+.about-text{
+  width: 55%;
+}
+
+.about-text h2{
+  font-size: 40px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.about-text p{
+  color: #cbd5e1;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
+/* ===== Skills ===== */
+.skills{
+  padding: 90px 8%;
+}
+
+.skills-box{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.skill-card{
+  width: 260px;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.skill-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(56, 189, 248, 0.18);
+}
+
+.skill-card h3{
+  color: #38bdf8;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.skill-card p{
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+/* ===== Projects ===== */
+.projects{
+  padding: 90px 8%;
+  background: #111827;
+}
+
+.project-box{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.project-card{
+  width: 330px;
+  background: #1e293b;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.project-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.18);
+}
+
+.project-card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: #0f172a;
+}
+
+.project-card h3{
+  font-size: 24px;
+  color: #38bdf8;
+  padding: 20px 20px 10px;
+}
+
+.project-card p{
+  color: #cbd5e1;
+  padding: 0 20px 20px;
+  font-size: 15px;
+}
+
+.project-card .btn{
+  margin: 0 20px 25px;
+}
+
+/* ===== Contact ===== */
+.contact{
+  padding: 90px 8%;
+}
+
+.contact-box{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.contact-form{
+  flex: 1;
+  min-width: 300px;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-info h3{
+  font-size: 28px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.contact-info p{
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #0f172a;
+  color: #fff;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color: #94a3b8;
+}
+
+.contact-form textarea{
+  resize: none;
+}
+
+/* ===== Footer ===== */
+footer{
+  text-align: center;
+  padding: 30px 20px;
+  background: #020617;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+footer h2{
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+footer p{
+  color: #cbd5e1;
+  margin: 6px 0;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 992px){
+  .hero,
+  .about{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image,
+  .about-text,
+  .about-image{
+    width: 100%;
+  }
+
+  .hero-buttons{
+    justify-content: center;
+  }
+}
+
+@media(max-width: 768px){
+  nav{
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero{
+    padding-top: 50px;
+  }
+
+  .hero-text h1{
+    font-size: 48px;
+  }
+
+  .hero-text h2{
+    font-size: 24px;
+  }
+
+  .hero-image img{
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-image img{
+    width: 260px;
+    height: 260px;
+  }
+
+  .section-title,
+  .about-text h2{
+    font-size: 32px;
+  }
+
+  .project-card,
+  .skill-card{
+    width: 100%;
+    max-width: 340px;
+  }
+
+</style>
 <body>
 
-<header>
-  <h1>Krishan</h1>
-  <p>web designer</p>
-</header>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <h2 class="logo">Krishan</h2>
 
-<section class="profile">
-  <img src="krishna.jpg" alt="krishan">
-  <p>📍 DELHI, Uttar Pradesh</p>
-  <p>📧 krishansain719@gmail.com</p>
-  <p>📞 9990824883,9911292733</p>
-  <a href= https://www.instagram.com/itz_kissu_king_004?igsh=NWs4M2c0bzluZmp3"target="_blank">Instagram </a>
-</section>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-<section class="card">
-  <h2>Professional Summary</h2>
-  <p>ATS-optimized and detail-oriented Software Developer skilled in building scalable web and mobile applications...</p>
-</section>
+      <a href="#contact" class="btn">Hire Me</a>
+    </nav>
+  </header>
 
-<section class="card">
-  <h2>Technical Skills</h2>
-  <ul>
-    <li>HTML, CSS,  javascript</li>
-    <li>React, Flutter, Node.js, Express</li>
-    <li>Git, GitHub, VS Code, </li>
-    
-  </ul>
-</section>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
 
-<section class="card">
-  <h2>Projects</h2>
-  <p><b>Suphub</b> – Supply Chain Platform</p>
-  <p><b>iComplinder</b> – Complaint Management System</p>
-  <p><b>Maxbuddy</b> – Food Ordering App</p>
-</section>
+    <div class="hero-text">
+      <h3>Hello, I'm</h3>
+      <h1>Krishan</h1>
+      <h2>Student & Frontend Learner</h2>
 
-<section class="card">
-  <h2>Education</h2>
-  <p> 12th pass </p>
-  <p> FOCUS on this (WEB DESIGN& DEVLOPMENT) PROJECTS</p>
-  
-</section>
+      <p>
+        I am learning HTML and CSS and building websites by practice.
+        I enjoy creating clean, simple and responsive web pages.
+      </p>
 
-<section class="card">
-  <h2>Additional Highlights</h2>
-  <ul>
-    <li>I AM A NEW BEEIGNER WEBSITE CRATERS ON THE BEST MOVEMENT OF OUR WEBSITE </li>
-    <li>Strong debugging mindset</li>
-    <li>Agile & CI/CD basics</li>
-  </ul>
-</section>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn2">Contact Me</a>
+      </div>
+    </div>
 
-<footer>
-  <p>© 2026 Krishan sain</p>
-</footer>
+    <div class="hero-image">
+      <img src="" alt="Krishan">
+    </div>
+
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+
+    <div class="about-image">
+      <img src="your-image.jpg" alt="About Krishan">
+    </div>
+
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        My name is Krishan. I am a student and currently learning front-end web development.
+        I have started building websites using HTML and CSS and I enjoy improving my skills by
+        creating projects like restaurant websites, food websites and portfolio pages.
+      </p>
+
+      <p>
+        My goal is to become confident in building beautiful and responsive websites on my own.
+      </p>
+
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-box">
+
+      <div class="skill-card">
+        <h3>HTML</h3>
+        <p>Good understanding of website structure, sections, forms, cards and layouts.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>CSS</h3>
+        <p>Can style websites using colors, spacing, flexbox, cards and responsive design basics.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Responsive Design</h3>
+        <p>Learning to make websites work properly on mobile and desktop screens.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Website Practice</h3>
+        <p>I practice by building restaurant pages, food websites and personal portfolio projects.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="project-box">
+
+      <div class="project-card">
+        <img src="project1.jpg" alt="Restaurant Website">
+        <h3>Restaurant Website</h3>
+        <p>
+          A modern restaurant website with navbar, hero section, menu cards,
+          reviews, contact form and footer.
+        </p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <img src="project2.jpg" alt="Food Website">
+        <h3>Food Delivery Website</h3>
+        <p>
+          A food-themed website layout with dishes section, about section,
+          reviews and clean responsive design.
+        </p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <img src="project3.jpg" alt="Portfolio Website">
+        <h3>Portfolio Website</h3>
+        <p>
+          A personal portfolio website to showcase my skills, projects,
+          learning journey and contact information.
+        </p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+      <div class="contact-info">
+        <h3>Let's Work Together</h3>
+        <p>If you want to connect with me, feel free to contact me here.</p>
+
+        <p><strong>Name:</strong> Krishan</p>
+        <p><strong>Email:</strong> yourmail@gmail.com</p>
+        <p><strong>GitHub:</strong> github.com/yourusername</p>
+        <p><strong>Instagram:</strong> @yourusername</p>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <input type="text" placeholder="Subject">
+        <textarea rows="6" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2>Krishan Portfolio</h2>
+    <p>Frontend Learner | HTML & CSS Practice Projects</p>
+    <p>© 2026 Krishan. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
